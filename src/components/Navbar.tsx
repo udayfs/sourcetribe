@@ -60,8 +60,8 @@ function Navbar() {
           {/* Signup Page */}
           <NavigationMenuItem className="px-2 mx-1">
             <ShinyButton className="rounded-[10px] p-3">
-              <Link href="/signup" className="text-[15px]">
-                Signup
+              <Link href="/signin" className="text-[15px]">
+                Signin
               </Link>
             </ShinyButton>
           </NavigationMenuItem>
@@ -98,8 +98,8 @@ function Navbar() {
               <div className="grid gap-3">
                 <Button variant="outline">
                   <LogIn />
-                  <Link href="/signup" className="text-[15px]">
-                    Signup
+                  <Link href="/signin" className="text-[15px]">
+                    Signin
                   </Link>
                 </Button>
               </div>

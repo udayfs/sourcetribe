@@ -19,8 +19,8 @@ function Footer() {
           <Link href="/contact" className="hover:underline">
             Contact
           </Link>
-          <Link href="/signup" className="hover:underline">
-            Signup
+          <Link href="/signin" className="hover:underline">
+            Signin
           </Link>
         </div>
       </div>
