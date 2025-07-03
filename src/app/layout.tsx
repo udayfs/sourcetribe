@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import { robotocon_font } from "@/app/fonts";
 import type { Metadata } from "next";
 import ThemeProvider from "@/components/ThemeProvider";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Sourcetribe",
@@ -26,6 +27,7 @@ function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

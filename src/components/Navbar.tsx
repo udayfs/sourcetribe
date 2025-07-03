@@ -24,7 +24,12 @@ import {
 
 function Navbar() {
   return (
-    <header className="w-full p-2 m-0 flex justify-between items-center">
+    <header
+      className="w-full p-2 m-0 flex justify-between items-center sticky top-0 left-0 z-100
+      bg-white/40 dark:bg-black/30 backdrop-blur-md shadow-md transition-colors"
+      style={{ WebkitBackdropFilter: "blur(12px)" }}
+    >
+      <h2 className="sr-only">Header</h2>
       <NavigationMenu className="lg:flex items-center hidden">
         <NavigationMenuList className="flex items-center">
           {/* Logo */}
@@ -71,7 +76,7 @@ function Navbar() {
               <Menu />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left">
+          <SheetContent side="left" className="z-100">
             <SheetHeader className="text-[18px]">
               <SheetTitle asChild>
                 <Link href="/" className={museo_font.className}>
