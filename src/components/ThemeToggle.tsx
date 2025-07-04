@@ -23,7 +23,7 @@ function ThemeToggle({className} : { className?: string | undefined }) {
           <span className="sr-only">Choose Theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="z-[1000]">
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>

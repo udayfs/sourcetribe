@@ -14,6 +14,6 @@ export const robotocon_font = Roboto_Condensed({
 
 export const onest_font = Onest({
   subsets: ["latin"],
-  weight: "600",
+  weight: ["400", "600"],
   variable: "--font-onest",
 });
