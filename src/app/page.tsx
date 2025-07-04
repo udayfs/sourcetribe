@@ -29,7 +29,7 @@ function Home() {
                 New
               </span>
               <span className="text-sm font-medium">
-                Sourcetribe is out! See what's new
+                Sourcetribe is out! See what&apos;s new
               </span>
               <svg
                 className="ml-2 w-5 h-5"
