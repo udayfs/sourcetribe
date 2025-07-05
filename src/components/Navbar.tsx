@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { museo_font } from "@/app/fonts";
 import { ShinyButton } from "@/components/magicui/shiny-button";
@@ -25,7 +27,7 @@ import {
 function Navbar() {
   return (
     <header
-      className="w-full p-2 m-0 flex justify-between items-center sticky top-0 left-0 z-100
+      className="w-full p-1 m-0 flex justify-between items-center sticky top-0 left-0 z-100
       bg-white/40 dark:bg-black/30 backdrop-blur-md shadow-md transition-colors"
       style={{ WebkitBackdropFilter: "blur(12px)" }}
     >
@@ -43,10 +45,11 @@ function Navbar() {
 
           {/* Blogs */}
           <NavigationMenuItem>
-            <ShinyButton className="rounded-[10px] p-3">
-              <Link href="/blog" className="text-[15px]">
-                Blog
-              </Link>
+            <ShinyButton
+              className="p-3 border-0"
+              onClick={() => (document.location.href = "/blog")}
+            >
+              Blogs
             </ShinyButton>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -59,10 +62,11 @@ function Navbar() {
 
           {/* Signup Page */}
           <NavigationMenuItem className="px-2 mx-1">
-            <ShinyButton className="rounded-[10px] p-3">
-              <Link href="/signin" className="text-[15px]">
-                Signin
-              </Link>
+            <ShinyButton
+              className="p-3 border-0"
+              onClick={() => (document.location.href = "/signin")}
+            >
+              Signin
             </ShinyButton>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -91,7 +95,7 @@ function Navbar() {
                 <Button variant="outline">
                   <BookOpenText />
                   <Link href="/blog" className="text-[15px]">
-                    Blog
+                    Blogs
                   </Link>
                 </Button>
               </div>
