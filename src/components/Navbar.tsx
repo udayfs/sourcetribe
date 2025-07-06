@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { museo_font } from "@/app/fonts";
 import { ShinyButton } from "@/components/magicui/shiny-button";
 import { Button } from "@/components/ui/button";
 import { Menu, BookOpenText, LogIn } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
 
 import {
   Sheet,
