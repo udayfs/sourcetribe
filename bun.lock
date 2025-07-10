@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "passin",
+      "name": "tixio",
       "dependencies": {
         "@clerk/nextjs": "^6.23.3",
         "@neondatabase/serverless": "^1.0.1",
