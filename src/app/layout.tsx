@@ -1,12 +1,10 @@
-import "@/app/globals.css";
-import { robotocon_font } from "@/app/fonts";
+import { inter_font } from "@/app/fonts";
 import type { Metadata } from "next";
-import ThemeProvider from "@/components/ThemeProvider";
-import Navbar from "@/components/Navbar";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Sourcetribe",
-  description: "A source hosting platform",
+  title: "Tixio",
+  description: "Events and entertainment management",
 };
 
 function RootLayout({
@@ -15,22 +13,8 @@ function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={robotocon_font.className}
-      suppressHydrationWarning
-    >
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={inter_font.className}>
+      <body>{children}</body>
     </html>
   );
 }

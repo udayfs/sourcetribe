@@ -1,12 +1,6 @@
-"use client";
-
-import { museo_font } from "@/app/fonts";
-import { ShinyButton } from "@/components/magicui/shiny-button";
-import { Button } from "@/components/ui/button";
-import { Menu, BookOpenText, LogIn } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
-
+import Image from "next/image";
+import { SquareMenu, LogIn } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -17,110 +11,87 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-
 function Navbar() {
   return (
-    <header
-      className="w-full p-1 m-0 flex justify-between items-center sticky top-0 left-0 z-100
-      bg-white/40 dark:bg-black/30 backdrop-blur-md shadow-md transition-colors"
-      style={{ WebkitBackdropFilter: "blur(12px)" }}
-    >
-      <h2 className="sr-only">Header</h2>
-      <NavigationMenu className="lg:flex items-center hidden">
-        <NavigationMenuList className="flex items-center">
-          {/* Logo */}
-          <NavigationMenuItem className="px-2 mx-1">
-            <NavigationMenuLink asChild className="text-[20px]">
-              <Link href="/" className={museo_font.className}>
-                Sourcetribe&trade;
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+    <nav className="bg-gradient-to-l from-orange-500 to-orange-700 fixed w-full z-20 top-0 start-0">
+      <div className="flex max-w-screen-xl flex-wrap items-center justify-between mx-auto p-3">
+        <Link
+          href="/"
+          className="md:flex hidden items-center space-x-3 rtl:space-x-reverse"
+        >
+          <Image
+            priority
+            src="/logo/tixio_logo.svg"
+            alt="Logo"
+            width={90}
+            height={40}
+          />
+        </Link>
+        <div className="flex space-x-3 md:space-x-0 rtl:space-x-reverse gap-2">
+          <button
+            type="button"
+            className="bg-red-800 hover:bg-pink-800 hover:cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-full text-sm px-4 py-2 text-center text-gray-100 md:flex hidden"
+          >
+            <Link href="/signin">Get started</Link>
+          </button>
 
-          {/* Blogs */}
-          <NavigationMenuItem>
-            <ShinyButton
-              className="p-3 border-0"
-              onClick={() => (document.location.href = "/blog")}
-            >
-              Blogs
-            </ShinyButton>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                data-collapse-toggle="navbar-sticky"
+                type="button"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm hover:cursor-pointer"
+                aria-controls="navbar-sticky"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open main menu</span>
+                <SquareMenu strokeWidth="1.6px" />
+              </button>
+            </SheetTrigger>
 
-      <NavigationMenu className="lg:flex items-center hidden">
-        <NavigationMenuList className="flex items-center">
-          {/* Theme Toggle  */}
-          <ThemeToggle className="px-6 mx-1" />
+            <SheetContent side="right" className="z-100">
+              <SheetHeader>
+                <SheetTitle asChild>
+                  <span className="font-semibold text-2xl text-black w-ful border-b-1 border-black pb-3">
+                    Hey!
+                  </span>
+                </SheetTitle>
+              </SheetHeader>
 
-          {/* Signup Page */}
-          <NavigationMenuItem className="px-2 mx-1">
-            <ShinyButton
-              className="p-3 border-0"
-              onClick={() => (document.location.href = "/signin")}
-            >
-              Signin
-            </ShinyButton>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      {/* Mobile hamburger menu */}
-      <NavigationMenu className="lg:hidden max-w-full flex items-center justify-between">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" className="px-6 mx-1" variant="default">
-              <Menu />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="z-100">
-            <SheetHeader className="text-[18px]">
-              <SheetTitle asChild>
-                <Link href="/" className={museo_font.className}>
-                  Sourcetribe&trade;
-                </Link>
-              </SheetTitle>
-            </SheetHeader>
-
-            {/* Main Content */}
-            <div className="mt-7 grid flex-1 auto-rows-min gap-4 px-4">
-              <div className="grid gap-3">
-                <Button variant="outline">
-                  <BookOpenText />
-                  <Link href="/blog" className="text-[15px]">
-                    Blogs
-                  </Link>
-                </Button>
+              <div className="mt-1 grid flex-1 auto-rows-min gap-4 px-4">
+                <div className="grid gap-3">
+                  <div className="flex flex-row w-full items-center gap-2">
+                    <span className="flex items-center justify-center flex-[2] h-12 text-xs px-4 py-2 rounded-full border-2 border-black bg-transparent text-center text-gray-500 border-dotted">
+                      Buy and sell event and shows tickets by logging in!
+                    </span>
+                    <button className="flex border-pink-600 px-4 py-2 rounded-full flex-1 min-w-fit bg-transparent border-1 text-xs hover:cursor-pointer justify-center items-center h-12">
+                      <Link
+                        href="/signin"
+                        className="text-pink-600 items-center w-full flex gap-2 justify-center"
+                      >
+                        <LogIn />
+                        Login
+                      </Link>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="grid gap-3">
-                <Button variant="outline">
-                  <LogIn />
-                  <Link href="/signin" className="text-[15px]">
-                    Signin
-                  </Link>
-                </Button>
-              </div>
-            </div>
 
-            <SheetFooter>
-              <SheetClose asChild>
-                <Button variant="destructive">Close</Button>
-              </SheetClose>
-            </SheetFooter>
-          </SheetContent>
-        </Sheet>
-
-        {/* Mobile Theme Toggle */}
-        <ThemeToggle className="px-6 mx-1" />
-      </NavigationMenu>
-    </header>
+              <SheetFooter>
+                <SheetClose asChild>
+                  <button
+                    type="button"
+                    className="w-full text-center bg-red-800 rounded-full px-4 py-2 text-gray-100 hover:cursor-pointer"
+                  >
+                    Close
+                  </button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </nav>
   );
 }
 

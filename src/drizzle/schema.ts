@@ -1,2 +1,2 @@
 export * from "@/drizzle/schema/user"
-export * from "@/drizzle/schema/org"
+export * from "@/drizzle/schema/organizer"
